@@ -1,0 +1,48 @@
+                                                 本地windows10 MySQL-5.7
+
+除了安装和运行路径以下操作命令也适用于Linux操作系统的MySQL-5.7
+
+Windows10安装mysql
+  https://www.cnblogs.com/ericli-ericli/p/6916285.html
+  https://www.jb51.net/article/126564.htm
+
+1.登陆MySQL(命令行以管理员身份打开)：D:\Mysql\mysql-5.7.22-winx64\bin>mysql -uroot -p123456
+
+
+2.查询数据库：show databases;(注意：末尾的分号全都是英文版的，不是中文版的)
+
+3.进入某个数据库：use “数据库名”;
+
+4.查看当前所在数据库：select database();
+
+5.查看当前是那个用户：select user();
+  查看mysql中所有用户：SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user;
+  查看数据库中具体某个用户的权限；show grants for '用户名'@'%';   
+
+6.列出数据库中的表：show tables;
+
+7.修改MySQL root用户密码
+  mysql> use mysql;
+  mysql> update mysql.user set authentication_string=password('123456') where user='root';
+  mysql> flush privileges;
+  mysql> exit
+  退出MySQL以后重启mysql服务用新密码登陆
+
+8.允许用户远程连接MySQL
+https://www.cnblogs.com/davidgu/p/3706663.html
+
+9.mysql5.7创建用户授权删除用户撤销授权
+  https://www.jb51.net/article/104986.htm
+  https://blog.csdn.net/gebitan505/article/details/51726649
+  
+  创建用户：CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+  授权：GRANT privileges ON databasename.tablename TO 'username'@'host';
+  设置与更改用户密码:SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
+  撤销用户权限:REVOKE privilege ON databasename.tablename FROM 'username'@'host';
+  删除用户:DROP USER 'username'@'host';
+  查看用户的授权 :show grants for '用户名'@'localhost';
+  
+
+
+
+  
