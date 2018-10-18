@@ -1,0 +1,50 @@
+diff a/mysql命令.txt b/mysql命令.txt	(rejected hunks)
+@@ -0,0 +1,48 @@
++                                                 ����windows10 MySQL-5.7
++
++���˰�װ������·�����²�������Ҳ������Linux����ϵͳ��MySQL-5.7
++
++Windows10��װmysql
++  https://www.cnblogs.com/ericli-ericli/p/6916285.html
++  https://www.jb51.net/article/126564.htm
++
++1.��½MySQL(�������Թ���Ա��ݴ�)��D:\Mysql\mysql-5.7.22-winx64\bin>mysql -uroot -p123456
++
++
++2.��ѯ���ݿ⣺show databases;(ע�⣺ĩβ�ķֺ�ȫ����Ӣ�İ�ģ��������İ��)
++
++3.����ĳ�����ݿ⣺use �����ݿ�����;
++
++4.�鿴��ǰ�������ݿ⣺select database();
++
++5.�鿴��ǰ���Ǹ��û���select user();
++  �鿴mysql�������û���SELECT DISTINCT CONCAT('User: ''',user,'''@''',host,''';') AS query FROM mysql.user;
++  �鿴���ݿ��о���ĳ���û���Ȩ�ޣ�show grants for '�û���'@'%';   
++
++6.�г����ݿ��еı��show tables;
++
++7.�޸�MySQL root�û�����
++  mysql> use mysql;
++  mysql> update mysql.user set authentication_string=password('123456') where user='root';
++  mysql> flush privileges;
++  mysql> exit
++  �˳�MySQL�Ժ�����mysql�������������½
++
++8.�����û�Զ������MySQL
++https://www.cnblogs.com/davidgu/p/3706663.html
++
++9.mysql5.7�����û���Ȩɾ���û�������Ȩ
++  https://www.jb51.net/article/104986.htm
++  https://blog.csdn.net/gebitan505/article/details/51726649
++  
++  �����û���CREATE USER 'username'@'host' IDENTIFIED BY 'password';
++  ��Ȩ��GRANT privileges ON databasename.tablename TO 'username'@'host';
++  ����������û�����:SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
++  �����û�Ȩ��:REVOKE privilege ON databasename.tablename FROM 'username'@'host';
++  ɾ���û�:DROP USER 'username'@'host';
++  �鿴�û�����Ȩ :show grants for '�û���'@'localhost';
++  
++
++
++
++  

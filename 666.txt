@@ -1,0 +1,12 @@
+2）中文支持
+
+许多代码文件中的中文在source tree中不能正确显示，都是乱码，可以通过配置解决，在同一窗口下，将
+
+“default text encoding”缺省是UTF8，将其设置成“GB18030”，即可正常显示中文；
+
+在source tree中的修改，对source tree自带的git shell也是有效的，命令行模式下也一样可以正常的显示中文了；
+--------------------- 
+作者：wangcfbj 
+来源：CSDN 
+原文：https://blog.csdn.net/wangcfbj/article/details/72766979 
+版权声明：本文为博主原创文章，转载请附上博文链接！
